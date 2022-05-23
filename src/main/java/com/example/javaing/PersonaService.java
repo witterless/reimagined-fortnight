@@ -1,5 +1,6 @@
 package com.example.javaing;
 
+import com.example.javaing.response.GetResponse;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -11,10 +12,10 @@ import javax.ws.rs.core.Response;
 
 public class PersonaService {
 
-  public List<Data> getPersona(){ Client client = ClientBuilder.newClient();
+  public List<GetResponse> getPersona(){ Client client = ClientBuilder.newClient();
     ObjectMapper objectMapper = new ObjectMapper();
 
-    WebTarget webTarget = client.target(PERSONA_URL).path(PERSONA_PATH);
+    WebTarget webTarget = client.target("https://withpersona.com/api/v1/accounts").path("/act_adery8xRe18bPP6LrcKuaZWT");
 
     Response response = webTarget.request(MediaType.APPLICATION_JSON).get();
 
